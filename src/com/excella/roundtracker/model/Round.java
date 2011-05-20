@@ -5,6 +5,7 @@ import java.util.Date;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import android.text.Editable;
+import android.util.Log;
 import static com.excella.roundtracker.util.FieldConverter.*;
 
 /**
@@ -49,6 +50,7 @@ public class Round
      */
     public static Round buildRound(Editable dateText, Editable scoreText)
     {
+        Log.i("RoundTracker", "Building a Round with date [" + dateText.toString() + "] and score [" + scoreText + "]");
         Date date = null;
         int score = -1;
         try
