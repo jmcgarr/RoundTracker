@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/newScore_label"/>
+	    
+	<TextView 
+	    android:id="@+id/dateFieldText" 
+		android:text="@string/dateFieldText_label" 
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"/>
+
+	<EditText 
+		android:id="@+id/dateField" 
+		android:text="@string/dateField_label" 
+		android:layout_height="wrap_content" 
+		android:layout_width="match_parent"/>
+
+	<TextView 
+		android:id="@+id/scoreFieldText" 
+		android:text="@string/scoreFieldText_label" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/>
+
+	<EditText 
+		android:id="@+id/scoreField" 
+		android:text="@string/scoreField_label" 
+		android:layout_height="wrap_content" 
+		android:layout_width="match_parent"/>
+
+	<Button 
+		android:id="@+id/saveScoreButton" 
+		android:text="@string/saveScoreButton_label" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/>
+
+</LinearLayout>

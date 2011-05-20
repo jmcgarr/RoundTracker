@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Welcome to Round Tracker!</string>
+    <string name="app_name">RoundTracker</string>
+    
+    <!-- New Score Activity -->
+    <string name="newScore_label">Add a New Score</string>
+    <string name="newScoreButton_label">Add a New Score</string>
+    <string name="dateFieldText_label">Date of Round:</string>
+    <string name="dateField_label">Date</string>
+    <string name="scoreFieldText_label">Score:</string>
+    <string name="scoreField_label">Score</string>
+    <string name="saveScoreButton_label">Save Score</string>
+</resources>
