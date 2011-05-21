@@ -1,19 +1,25 @@
 package com.excella.roundtracker.model;
 
+import static com.excella.roundtracker.util.FieldConverter.convertDateToDBString;
+import static com.excella.roundtracker.util.FieldConverter.convertTextToDate;
+import static com.excella.roundtracker.util.FieldConverter.convertTextToInt;
+
 import java.util.Date;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import android.text.Editable;
 import android.util.Log;
-import static com.excella.roundtracker.util.FieldConverter.*;
 
 /**
+ * TODO Review the need for this class.  OO model objects may not be needed with the way the ContentProviders work.
  * @author jmcgarr
- *
  */
 public class Round
 {
+    public static final String DATE = "date_of_round";
+    public static final String SCORE = "score";
+    
     private int score;
     private Date date;
 
@@ -36,6 +42,11 @@ public class Round
     public Date getDate()
     {
         return date;
+    }
+    
+    public String getDateString()
+    {
+        return convertDateToDBString(date);
     }
 
     public void setDate(Date date)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.excella.roundtracker"
-      android:versionCode="1"
+      android:versionCode="2"
       android:versionName="1.0">
 
 
@@ -17,8 +17,8 @@
         
         <activity android:name=".NewScoreActivity"
         		  android:label="@string/newScore_label"
-        		  android:screenOrientation="portrait"/>
-
+        		  android:screenOrientation="portrait" />
+		
 
     </application>
 </manifest>

@@ -19,6 +19,9 @@ public class HomeActivity extends Activity
         addNewScoreButton();
     }
 
+    /**
+     * 
+     */
     private void addNewScoreButton()
     {
         Button newButton = (Button) findViewById(R.id.newScoreButton);
@@ -32,6 +35,9 @@ public class HomeActivity extends Activity
         });
     }
     
+    /**
+     * 
+     */
     private void openAddScoreActivity ()
     {
         Intent newScoreIntent = new Intent(this, NewScoreActivity.class);

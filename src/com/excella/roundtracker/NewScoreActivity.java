@@ -18,6 +18,7 @@ public class NewScoreActivity extends Activity
 {
     private static final int DIALOG_SUCCESSFUL_SAVE = 0;
     private static final int DIALOG_FAILED_SAVE = 1;
+    private RoundRepository repo;
 
     /* (non-Javadoc)
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -27,10 +28,15 @@ public class NewScoreActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newscore);
-
+        initRepository();
         initLayout();
     }
     
+    private void initRepository()
+    {
+        this.repo = new RoundRepository(this);
+    }
+
     @Override
     protected Dialog onCreateDialog(int id)
     {
@@ -84,19 +90,10 @@ public class NewScoreActivity extends Activity
             }
         });
     }
-        
-    /**
-     * Navigates the user to the Successful Save Dialogue.
-     * @param view the current view.
-     */
-    private void openSaveDialogue(View view)
-    {
-        
-    }
     
     /**
      * Given a view, will build a Round object and then persist it.
-     * @TODO remove this code into a Repository pattern or something like that.
+     * TODO remove this code into a Repository pattern or something like that.
      * 
      * @param view the current view.
      */
@@ -106,16 +103,9 @@ public class NewScoreActivity extends Activity
         Editable scoreText = ((EditText) findViewById(R.id.scoreField)).getText();
         
         Round round = Round.buildRound(dateText, scoreText);
-        saveRound(round);
-    }
 
-    /**
-     * Persists a Round object to the storage mechanism.
-     * @param round
-     */
-    private void saveRound(Round round)
-    {
-        // Make a call to the Content Provider to persist the Round
         Log.i("RoundTracker", "Saving a Round: " + round.toString());
-    } 
+        long roundId = repo.insert(round);        
+        Log.i("RoundTracker", "Round Saved - " + roundId);
+    }
 }

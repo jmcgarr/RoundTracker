@@ -8,6 +8,9 @@ import android.text.Editable;
 
 public class FieldConverter
 {
+    private static final SimpleDateFormat SQLITEFORMAT = new SimpleDateFormat("YYYY-MM-dd");
+    private static final SimpleDateFormat FORMFIELDFORMAT = new SimpleDateFormat("MM/dd/yy");
+
     /**
      * @param scoreText
      * @return
@@ -32,9 +35,22 @@ public class FieldConverter
         Date date = null;
         if (dateText != null)
         {
-            SimpleDateFormat format = new SimpleDateFormat("MM/dd/yy");
-            date = format.parse(dateText.toString());
+            date = FORMFIELDFORMAT.parse(dateText.toString());
         }
         return date;
+    }
+    
+    /**
+     * @param date
+     * @return
+     */
+    public static String convertDateToDBString(Date date)
+    {
+        String convertedDate = null;
+        if (date != null)
+        {
+            convertedDate = SQLITEFORMAT.format(date);
+        }
+        return convertedDate;
     }
 }
